@@ -1,26 +1,25 @@
 import React from "react"
 import "./courses.css"
 import { coursesCard } from "../../dummydata"
-
+import { useNavigate } from "react-router-dom";
 const CoursesCard = () => {
+  const navigate = useNavigate();
+
   const handleEnroll = (course) => {
-    // Retrieve existing cart from local storage or create an empty array
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Check if the course is already in the cart
     const existingCourse = cart.find((c) => c.id === course.id);
 
     if (existingCourse) {
-      // If the course is already in the cart, update the quantity
       existingCourse.quantity += 1;
     } else {
-      // If the course is not in the cart, add it
       cart.push({ ...course, quantity: 1 });
     }
 
-    // Save the updated cart to local storage
     localStorage.setItem("cartcourses", JSON.stringify(cart));
-    window.location.href = "/cart";
+
+    // Use React Router for navigation
+    navigate("/cart");
   };
   return (
     <>
