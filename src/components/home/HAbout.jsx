@@ -9,30 +9,49 @@ const HAbout = () => {
   const navigate = useNavigate();
 
   const handleEnroll = (course) => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    const existingCourse = cart.find((c) => c.id === course.id);
-
-    if (existingCourse) {
-      existingCourse.quantity += 1;
+    
+    const cart = JSON.parse(localStorage.getItem("cartcourses")) || [];
+   // Check if the course is already in the cart
+    const existingCourseIndex = cart.findIndex((c) => c.id === course.id);
+  
+    if (existingCourseIndex !== -1) {
+    
+      cart[existingCourseIndex].quantity += 1;
     } else {
+      
       cart.push({ ...course, quantity: 1 });
     }
-
+  
+   
     localStorage.setItem("cartcourses", JSON.stringify(cart));
-
-    // Use React Router for navigation
+  
+  
     navigate("/cart");
   };
+  // const handleEnroll = (course) => {
+  //   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  //   const existingCourse = cart.find((c) => c.id === course.id);
+
+  //   if (existingCourse) {
+  //     existingCourse.quantity += 1;
+  //   } else {
+  //     cart.push({ ...course, quantity: 1 });
+  //   }
+
+  //   localStorage.setItem("cartcourses", JSON.stringify(cart));
+
+  //   // Use React Router for navigation
+  //   navigate("/cart");
+  // };
 
   return (
     <>
-      <section className='homeAbout'>
-        <div className='container'>
+      <section className='homeAbout '>
+        <div className='container '>
           <Heading subtitle='our courses' title='explore our popular online courses' />
 
           <div className='coursesCard'>
-            {/* copy code form  coursesCard */}
             <div className='grid2'>
               {coursesCard.slice(0, 3).map((val) => (
                 <div className='items'>

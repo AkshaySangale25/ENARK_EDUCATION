@@ -9,12 +9,13 @@ import Hero from "./hero/Hero"
 const Home = () => {
   return (
     <>
-      <Hero />
-      <AboutCard />
-     <HAbout />
-     <Testimonal />
-     <Hblog />
+    <Hero />
+    <AboutCard />
+    <HAbout />
+    <Testimonal />
+    <Hblog />
      <Hprice />
+    
     </>
   )
 }

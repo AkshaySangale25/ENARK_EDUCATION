@@ -1,35 +1,35 @@
 .aboutHome {
   height: auto;
-  margin-top: 40%;
+  /* margin-top: 40%; */
 }
 .aboutHome #heading {
   text-align: left;
   padding: 0;
 }
-.aboutHome .left img {
+/* .aboutHome .left img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .aboutHome .right {
   padding: 80px 50px;
-}
-.aboutHome .items {
+} */
+/* .aboutHome .items {
   margin-top: 50px;
-}
+} */
 .aboutHome .item {
   background-color: #fff;
   margin-top: 30px;
   padding: 20px;
   transition: 0.5s;
 }
-.aboutHome .img {
+/* .aboutHome .img {
   width: 200px;
 }
 .aboutHome img {
   width: 70px;
   height: 70px;
-}
+} */
 .aboutHome .item h2 {
   font-size: 20px;
   margin-bottom: 15px;
@@ -52,7 +52,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 30vh;
+  /* height: 40vh; */
   color: #fff;
 }
 .awrapper .box {

@@ -1,31 +1,12 @@
 /* cartPage.css */
 
-.cart {
-  background-color: #eeeeee;
-  }
-  .cartTitle{
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-  }
-  /* .cart h2 {
-    
-    margin-bottom: 20px;
-  } */
-  
-  .cartCard  {
-   
-    background-color: white;
-    margin-bottom: 10px;
-  }
-  
-  .cart p {
-    margin: 5px 0;
-  }
+
+
+ 
   
   .cart button {
     background-color: #4caf50;
-    color: #fff;
+    
     padding: 10px;
     border: none;
     cursor: pointer;
@@ -35,18 +16,20 @@
     background-color: #45a049;
   }
   
-  .cartTitle {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding-bottom: 10px;
-  }
-  .text{
-    margin-left: 30px;
-  }
   .cartCard {
-    background-color: white;
-    margin-top: 10px;
-    margin-left: 30%;
-    margin-right: 30%;
-    padding-bottom: 20px; /* Add padding for better spacing */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .cartCard1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  
+  }
+  @media screen and (max-width: 768px) {
+    .cartCard {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
   }

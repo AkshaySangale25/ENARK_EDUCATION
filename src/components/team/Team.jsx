@@ -8,13 +8,17 @@ import "../about/about.css"
 const Team = () => {
   return (
     <>
+      
+    <div className="w-full border h-[60vh] md:h-[90vh] xl:h-[70vh]">
       <Back title='Team' />
+    </div>
+     
       <section className='team padding'>
         <div className='container grid'>
           <TeamCard />
         </div>
       </section>
-      <Awrapper />
+      {/* <Awrapper /> */}
     </>
   )
 }

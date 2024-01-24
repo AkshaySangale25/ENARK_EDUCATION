@@ -15,6 +15,9 @@ import CartPage from './components/CartPage/CartPage';
 
 function App() {
   return (
+    <div className='border-4 w-full'>
+
+   
     <Router>
       <Header />
       <Routes>
@@ -31,6 +34,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    </div>
   );
 }
 
