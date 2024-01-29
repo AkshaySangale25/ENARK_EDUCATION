@@ -1,20 +1,30 @@
-// CartPage.jsx
-
-
-import React from "react";
+//cartpage.jsx
+import React, { useState, useEffect } from "react";
 import './cartPage.css';
 import Back from "../common/back/Back";
 
 const CartPage = () => {
-  const cart = JSON.parse(localStorage.getItem("cartcourses")) || [];
+  // Use state to manage the cart
+  const [cart, setCart] = useState([]);
+
+  // Load the cart from local storage on component mount
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cartcourses")) || [];
+    setCart(storedCart);
+  }, []);
 
   const removeFromCart = (courseId) => {
     console.log("Removing course with ID:", courseId);
-  
+
+    // Filter out the course with the specified courseId
     const updatedCart = cart.filter(course => course.id !== courseId);
     console.log("Updated Cart:", updatedCart);
-  
+
+    // Update local storage with the updated cart
     localStorage.setItem("cartcourses", JSON.stringify(updatedCart));
+
+    // Update the cart state to trigger a re-render
+    setCart(updatedCart);
   };
   
   return (
